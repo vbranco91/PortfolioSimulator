@@ -8,7 +8,7 @@ Actuarial Portfolio Assesment Tool
 - Teste de aderência à distribuição uniforme (Qui-Quadrado)
 - Anexo técnico com todos os cálculos passo a passo
 
-🛠️ Tecnologias
+## 🛠️ Tecnologias
 - Python
 - Streamlit
 - Pandas
