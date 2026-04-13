@@ -3,11 +3,11 @@ Actuarial Portfolio Assesment Tool
 
 # Introduction & Goals
 This project simulates actuarial loss trends and frequency/severity distributions. 
-Using **Python** and **Streamlit**, we process insurance datasets to evaluate risk exposure and forecast future outcomes.
-    - **Objective:** Provide a real-time dashboard for portfolio health monitoring.
-    - **Data:** Synthetic actuarial claims and earned premium data.
-    - **Tools:** Pandas for processing, Plotly for visualization.
-    - **Conclusion:** In Progress.  
+    Using **Python** and **Streamlit**, we process insurance datasets to evaluate risk exposure and forecast future outcomes.
+        - **Objective:** Provide a real-time dashboard for portfolio health monitoring.
+        - **Data:** Synthetic actuarial claims and earned premium data.
+        - **Tools:** Pandas for processing, Plotly for visualization.
+        - **Conclusion:** In Progress.  
 
 # Contents
 
@@ -73,7 +73,7 @@ This is ideal for, Pure Premium modeling, rate adequacy studies.
 **Db_Sns** is a long format triangle with botjh claims-type and monetary-type measures.
 This table is a cohort-by-development (issue x lag) transactional ledger, typicel of insurance claim development datasets used for pricing, reserving and profitability analysis.
 
-**Recovery / offset components**
+**Claims measures**
 - **QtdPP**: Phhysical Damage Partial Loss Claims
 - **QtdPT**: Phhysical Damage Total Loss Claims
 - **QtdRbft**: Theft Loss Claims
