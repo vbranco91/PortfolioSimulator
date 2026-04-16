@@ -3,11 +3,12 @@ Actuarial Portfolio Assesment Tool
 
 # Introduction & Goals
 This project simulates actuarial loss trends and frequency/severity distributions.
-    Using **Python** and **Streamlit**, we process insurance datasets to evaluate risk exposure and forecast future outcomes.
-    - **Objective:** Provide a real-time dashboard for portfolio health monitoring.
-        - **Data:** Synthetic actuarial claims and earned premium data.
-        - **Tools:** Pandas for processing, Plotly for visualization.
-        - **Conclusion:** In Progress.  
+
+Using **Python** and **Streamlit**, we process insurance datasets to evaluate risk exposure and forecast future outcomes.
++ **Objective:** Provide a real-time dashboard for portfolio health monitoring.
+    + **Data:** Synthetic actuarial claims and earned premium data.
+    + **Tools:** Pandas for processing, Plotly for visualization.
+    + **Conclusion:** In Progress.  
 
 # Contents
 
@@ -18,12 +19,9 @@ This project simulates actuarial loss trends and frequency/severity distribution
   - [Processing](#processing)
   - [Storage](#storage)
 - [Pipelines](#pipelines)
-  - [Stream Processing](#stream-processing)
-  - [Assumptions](#visualization)
-  - []
-    - [Storing Data Stream](#storing-data-stream)
-    - [Processing Data Stream](#processing-data-stream)
-  - [Batch Processing](#batch-processing)
+  - [Assumptions](## Assumptions (PremParam & SinisParam))
+  - [Projections](## Projections)
+  - [Projections](## Projections)
   - [Visualizations](#visualizations)
 - [Demo](#demo)
 - [Conclusion](#conclusion)
@@ -124,10 +122,6 @@ This dataset uses multiple time axes, which is typical of actuarial datasets
 - Why did you choose them
 - How did you set them up
 
-## Connect
-## Buffer
-## Processing
-## Storage
 
 # Pipelines
 ## Assumptions (PremParam & SinisParam)
@@ -148,6 +142,7 @@ This dataset uses multiple time axes, which is typical of actuarial datasets
 -     Introduces “Trended” adjustments to normalize historical costs to current levels.
 -     Produces robust baselines for frequency, severity, and recovery.
 
+
 ## Projections
 - **Elasticity Modeling**: Captures how conversion and retention rates react to price changes.
 - **Scenario Loop (Monte Carlo)**: Tests tariff variations between -5% and +5% to measure sensitivity.
@@ -164,11 +159,10 @@ This dataset uses multiple time axes, which is typical of actuarial datasets
 - **Stress Testing**: Incorporate extreme scenarios (economic shocks, regulatory changes) to test portfolio resilience.
 - **Continuous Feedback Loop**: Integrate analyst feedback directly into the simulator for iterative model refinement.
 
-## Stream Processing
-### Storing Data Stream
-### Processing Data Stream
-## Batch Processing
+
 ## Visualizations
+- **Link**: Streamlit.
+
 
 # Conclusion
 Write a comprehensive conclusion.
