@@ -8,7 +8,11 @@ Using **Python** and **Streamlit**, we process insurance datasets to evaluate ri
 + **Objective:** Provide a real-time dashboard for portfolio health monitoring.
     + **Data:** Synthetic actuarial claims and earned premium data.
     + **Tools:** Pandas for processing, Plotly for visualization.
-    + **Conclusion:** In Progress.  
+    + **Conclusion:**
+        + This is an end-to-end project. From data gathering up to live visualizations on streamlit.
+        + The biggest challenges was to replicate renewal batches coming from open business in the books (some w probability to face cancellations).
+        + Applying Polynomial Regessions was a huge boost in development and better stabelizes Frequency and Severity for all coverages.
+        + Overall this project turn out to be a good decision tool for stakeholders the way it's currently built.
 
 # Contents
 
@@ -35,9 +39,9 @@ Using **Python** and **Streamlit**, we process insurance datasets to evaluate ri
 This dataset is well suited for: premium triangles, earned premium calculations, exposure-based frequency and severity analysis and LTV/pricing/portfolio analysis
 
 **Raw Premium movements**
-- **PremEmit**: Issued premium
-- **PremEndos**: Endorsement premium (positive or negative)
-- **PremCanc**: Cancelled premium
+- **WrittenPremium**: Issued premium
+- **WritEndorsPremium**: Endorsement premium (positive or negative)
+- **WritCancPremium**: Cancelled premium
 - **GWP (Gross Written Premium)**: GWP = PremEmit + PremEndos + PremCanc
 
 These values are transactional, aligned with policy lifecycle events.
@@ -47,17 +51,17 @@ These values are transactional, aligned with policy lifecycle events.
 - **EmitExp**
 - **EndorsExp**
 - **CancExp**
-- **PGCalc**: Calculated Earned Premium
+- **EarnPrem**: Calculated Earned Premium
 
 These are consistent with **pro-rata temporis earning or accounting rules**, distributing written premium over coverage duration.
 Allowing Earned Premium triangles, ratio analysis (loss / expense over earned), etc.
 
 
 **Item counts (policy / exposure units)**
-- **ItensEmit**: Issued items (policies, risks)
-- **ItensEndors**: Endorsements counts
-- **ItensCanc**: Cancelled itens
-- **Itens Net**: Net Items
+- **WrittenItem**: Issued items (policies, risks)
+- **WritEndorsItem**: Endorsements counts
+- **WritCancItem**: Cancelled itens
+- **Net_Item**: Net Items
 
 These metrics are critical for Frequency modeling, policy retention, average premium per item.
 
@@ -66,7 +70,7 @@ These metrics are critical for Frequency modeling, policy retention, average pre
 - **ExposicaoEmit**: Issued items (policies, risks)
 - **ExposicaoEndors**: Endorsements counts
 - **ExposicaoCanc**: Cancelled itens
-- **Exposicao**: Net Exposure
+- **Exposure**: Net Exposure
 
 These metrics are fractional, indicating partial-year exposure, midterm=endorsements and cancellations, time-weigthed risk contribution.
 
@@ -125,11 +129,27 @@ This dataset uses multiple time axes, which is typical of actuarial datasets
 - **DtRefCtb**: Accounting reference date. Represents the **valuation/accounting period**.
 
 # 🛠️ Used Tools
-- Explain which tools do you use and why
-- Python (Pandas, Numpy, Matplotlib, Streamlit)
-- How do they work (don't go too deep into details, but add links)
-- Why did you choose them
-- How did you set them up
++ Python
+    + The core programming language for the simulator. It provides flexibility, readability, and a huge ecosystem of libraries for data analysis and visualization.
+
++ Pandas
+    + Used for handling tabular data (CSV, Excel, Parquet). It makes grouping, filtering, and aggregating insurance data straightforward.
+    + Reads and structures data into DataFrames, enabling operations like groupby, merge, and sum.
+    + Essential for actuarial work where large datasets (premiums, claims, exposures) need efficient manipulation.
+
++ Numpy
+    + Provides efficient numerical operations, especially for vectorized calculations and handling large datasets.
+    + Handles arrays and mathematical operations behind the scenes, making calculations faster.
+
++ Plotly
+    + Used for plotting trends, frequencies, severities, and other actuarial metrics. It allows customization of charts for professional reporting.
+    + Translates numerical results into visual graphs (line charts, bar charts, scatter plots).
+    + Provides precise control over actuarial charts, which are often regulatory or board‑facing.
+
++ Streamlit
+    + Powers the interactive dashboard/web app. It lets you share results and insights with stakeholders in a user‑friendly way without needing complex web development.
+    + Wraps your Python scripts into a web interface, displaying tables, charts, and interactive widgets directly in the browser.
+    + Quick deployment of dashboards without needing HTML/JS — perfect for sharing projections with non‑technical stakeholders.
 
 
 # Pipelines
@@ -170,14 +190,16 @@ This dataset uses multiple time axes, which is typical of actuarial datasets
 
 
 ## Visualizations
-- **Link**: Streamlit.
+- **Link**: [Streamlit](https://actuarialportfoliosimulator.streamlit.app/).
 
 
 # Conclusion
-Write a comprehensive conclusion.
-- How did this project turn out
-- What major things have you learned
-- What were the biggest challenges
+- This is an end-to-end project. From data gathering up to live visualizations on streamlit.
+- The biggest challenges was to replicate renewal batches coming from open business in the books (some w probability to face cancellations) + future expected new business coming from applied elasticity conversion.
+- Applying Polynomial Regessions was a huge boost in development and better stabelizes Frequency and Severity for all coverages.
+- There is still room to grow. Input roadside assistance and apply baselines, project commision values and add others expenses to build up a future Combined Ratio.
+- Overall this project turn out to be a good decision tool for stakeholders the way it's currently built.
+- It took different packages and applied actuarial/economic logics, that made me grew in terms of business knowledge and coding skills. 
 
 # Follow Me On
 [LinkedIn Profile](https://www.linkedin.com/in/atuario-vinicius-almeida/?locale=en)
