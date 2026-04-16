@@ -2,9 +2,9 @@
 Actuarial Portfolio Assesment Tool
 
 # Introduction & Goals
-This project simulates actuarial loss trends and frequency/severity distributions. 
+This project simulates actuarial loss trends and frequency/severity distributions.
     Using **Python** and **Streamlit**, we process insurance datasets to evaluate risk exposure and forecast future outcomes.
-        - **Objective:** Provide a real-time dashboard for portfolio health monitoring.
+    - **Objective:** Provide a real-time dashboard for portfolio health monitoring.
         - **Data:** Synthetic actuarial claims and earned premium data.
         - **Tools:** Pandas for processing, Plotly for visualization.
         - **Conclusion:** In Progress.  
@@ -17,10 +17,10 @@ This project simulates actuarial loss trends and frequency/severity distribution
   - [Buffer](#buffer)
   - [Processing](#processing)
   - [Storage](#storage)
-  - [Visualization](#visualization)
 - [Pipelines](#pipelines)
   - [Stream Processing](#stream-processing)
-  - [Assumptions]
+  - [Assumptions](#visualization)
+  - []
     - [Storing Data Stream](#storing-data-stream)
     - [Processing Data Stream](#processing-data-stream)
   - [Batch Processing](#batch-processing)
@@ -108,12 +108,12 @@ This is a **multi-valuation long table**.
 - Item counts align consistently with exposure direction
 
 **Dimensions**
-a) Attributes segmentation
+a) **Attributes segmentation**
 - **ProductID**: Product code.
 - **BusinessID**: Business Type code.
 
 b) **Time Dimensions** 
-This dataset usus multiple time axes, which is typical of actuarial datasets
+This dataset uses multiple time axes, which is typical of actuarial datasets
 - **DtEmissao**: Issued Date, stored as serial date. Represents the **origin period** (underwriting month).
 - **DtRefCtb**: Accounting reference date. Represents the **valuation/accounting period**.
 
@@ -128,7 +128,6 @@ This dataset usus multiple time axes, which is typical of actuarial datasets
 ## Buffer
 ## Processing
 ## Storage
-## Visualization
 
 # Pipelines
 ## Assumptions (PremParam & SinisParam)
@@ -159,11 +158,11 @@ This dataset usus multiple time axes, which is typical of actuarial datasets
 
 
 ## 💡 **Suggested Ideas for Future Improvements**
-**Automation**: Develop automated ETL pipelines to reduce manual data imports (especially HDI inputs).
-**Visualization**: Add dashboards for scenario comparison (elasticity curves, renewal ratios, claim projections).
-**Machine Learning**: Explore ML models for non-linear claim frequency/severity trends beyond polynomial regression.
-**Stress Testing**: Incorporate extreme scenarios (economic shocks, regulatory changes) to test portfolio resilience.
-**Continuous Feedback Loop**: Integrate analyst feedback directly into the simulator for iterative model refinement.
+- **Automation**: Develop automated ETL pipelines to reduce manual data imports (especially HDI inputs).
+- **Visualization**: Add dashboards for scenario comparison (elasticity curves, renewal ratios, claim projections).
+- **Machine Learning**: Explore ML models for non-linear claim frequency/severity trends beyond polynomial regression.
+- **Stress Testing**: Incorporate extreme scenarios (economic shocks, regulatory changes) to test portfolio resilience.
+- **Continuous Feedback Loop**: Integrate analyst feedback directly into the simulator for iterative model refinement.
 
 ## Stream Processing
 ### Storing Data Stream
@@ -181,6 +180,5 @@ Write a comprehensive conclusion.
 [LinkedIn Profile](https://www.linkedin.com/in/atuario-vinicius-almeida/?locale=en)
 
 # Appendix
-[Markdown Cheat Sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 - Exposicao Atuarrial. [Loss Trends for Frequency & Severity](https://exposicaoatuarial.wordpress.com/2026/02/16/loss-trends-for-frequency-severity/)
 - Exposicao Atuarrial. [CAS Basic Ratemaking Earned Premium & Exposure](https://exposicaoatuarial.wordpress.com/2026/02/16/cas-basic-ratemaking-earned-premium-exposure/)
