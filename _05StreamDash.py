@@ -21,7 +21,7 @@ EA_LIGHT_GRAY = "#BFBFBF"
 EA_WHITE = "#FFFFFF"
 
 # Import Main Dataset
-dir = 'C:/Users/vinic/OneDrive/Desktop/Vini/02.Projetos/ExposicaoAtuarial/2025/Simulador/20.Template/04.Outputs/'
+dir = './_data/_04Outputs/'
 file_name = dir + 'Db_Cens_2025December_v1.parquet'
 df = pd.read_parquet(file_name)
 df_org = df.copy()
