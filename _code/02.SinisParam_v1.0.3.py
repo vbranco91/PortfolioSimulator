@@ -32,16 +32,16 @@ from matplotlib import patches
 
 #1.0 Import Dataframe--------------------------------------------------------------------
 # Alterar diretorio de importacao de dados
-dir = 'C:/Users/vinic/OneDrive/Desktop/Vini/02.Projetos/ExposicaoAtuarial/2025/Simulador/01.Inputs/01.Prem/'
+dir = '_data/_01Input/_01Prem/'
 file_name = dir + 'Db_PremAct.parquet'
 df = pd.read_parquet(file_name)
 
-dir = 'C:/Users/vinic/OneDrive/Desktop/Vini/02.Projetos/ExposicaoAtuarial/2025/Simulador/01.Inputs/01.Prem/'
+dir = '_data/_01Input/'
 file_name = dir + 'Db_Exp.xlsx'
 df_exp = pd.read_excel(file_name)
 
 
-dir = 'C:/Users/vinic/OneDrive/Desktop/Vini/02.Projetos/ExposicaoAtuarial/2025/Simulador/01.Inputs/02.Sns/'
+dir = '_data/_01Input/_01Sns/'
 file_name = dir + 'Db_Sns.parquet'
 df_sns = pd.read_parquet(file_name)
 
