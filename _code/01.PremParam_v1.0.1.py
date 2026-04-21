@@ -21,12 +21,12 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 
 #1.0 Import Dataframe (Parquet)--------------------------------------------------------------------
-dir = 'C:/Users/vinic/OneDrive/Desktop/Vini/02.Projetos/ExposicaoAtuarial/2025/Simulador/01.Inputs/01.Prem/'
+dir = '_data/_01Input/_01Prem/'
 file_name = dir + 'Db_PremAct.parquet'
 df = pd.read_parquet(file_name)
 df['PolicyEffDate'].sort_values().unique()
 
-dir = 'C:/Users/vinic/OneDrive/Desktop/Vini/02.Projetos/ExposicaoAtuarial/2025/Simulador/01.Inputs/03.CotacaoVlrIS/'
+dir = '_data/_01Input/_03CotacaoVlrIS/'
 file_name = dir + 'Db_QuotesSI.parquet'
 df_ctc = pd.read_parquet(file_name)
 
@@ -218,7 +218,7 @@ TbBslRetRatio = (TbBslRetRatio
 # Create an ParquetWriter object #
 ##################################
 # Alterar diretorio para AWS S3
-diroutput = 'C:/Users/vinic/OneDrive/Desktop/Vini/02.Projetos/ExposicaoAtuarial/2025/Simulador/20.Template/03.Baselines/01.Prem/'
+diroutput = '_data/_03Baselines/_01Prem/'
 
 outputfile = 'BaselinePremium.parquet'
 TbBslPrm.reset_index(drop=True, inplace=True)
@@ -239,7 +239,7 @@ TbBslRetRatio.to_parquet(diroutput + outputfile)
 print(f"DataFrames exported to '{outputfile}' successfully.")
 
 
-diroutput = 'C:/Users/vinic/OneDrive/Desktop/Vini/02.Projetos/ExposicaoAtuarial/2025/Simulador/20.Template/03.Baselines/01.Prem/Excel/'
+diroutput = '_data/_03Baselines/_01Prem/Excel/'
 outputfile = 'BaselinePremium.xlsx'
 TbBslPrm.reset_index(drop=True, inplace=True)
 TbBslPrm.to_excel(diroutput + outputfile)
