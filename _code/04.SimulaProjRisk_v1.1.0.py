@@ -34,51 +34,44 @@ import matplotlib.pyplot as plt
 
 
 #1.0 Import Dataframe--------------------------------------------------------------------
-dir = 'Z:/Economics_Brazil/09.Simulador/20.Template/01.Inputs/01.Prem/Excel/'
-file_name = dir + 'Db_PremAct.xlsx'
-df = pd.read_excel(file_name)
+dir = '_data/_01Input/_01Prem/'
+file_name = dir + 'Db_PremAct.parquet'
+df = pd.read_parquet(file_name)
 
+dir = '_data/_01Input/'
 file_name = dir + 'Db_Exp.xlsx'
 df_exp = pd.read_excel(file_name)
 
-dir = 'Z:/Economics_Brazil/09.Simulador/20.Template/03.Baselines/01.Prem/Excel/'
-file_name = dir + 'BaselineRatios.xlsx'
-TbTxs = pd.read_excel(file_name)
-file_name = dir + 'RenewalRatio.xlsx'
-TbBslRetRatio = pd.read_excel(file_name)
+dir = '_data/_01Input/_02Sns/'
+file_name = dir + 'Db_Sns.parquet'
+df_sns = pd.read_parquet(file_name)
 
-dir = 'Z:/Economics_Brazil/09.Simulador/20.Template/01.Inputs/02.Sns/Excel/'
-file_name = dir + 'Db_Sns.xlsx'
-df_sns = pd.read_excel(file_name)
-
-
-dir = 'Z:/Economics_Brazil/09.Simulador/20.Template/01.Inputs/06.ProjCenOutputs/'
+dir = '_data/_01Input/_03ProjCenOutputs/'
 file_name = dir + 'Db_PremProjCen.parquet'
 df_ProjCen = pd.read_parquet(file_name)
 
+dir = '_data/_03Baselines/_02Sns/'
+file_name = dir + 'BaselineSns.parquet'
+TbBslSns = pd.read_parquet(file_name)
 
-dir = 'Z:/Economics_Brazil/09.Simulador/20.Template/03.Baselines/02.Sns/Excel/'
-file_name = dir + 'BaselineSns.xlsx'
-TbBslSns = pd.read_excel(file_name)
-
-file_name = dir + 'BaselineDevSns.xlsx'
-TbDsvSns = pd.read_excel(file_name)
-TbDsvSns = TbDsvSns[['CodProd', 'CodTipNeg', 'Lags', 'FreqPPClmDevFact', 'FreqPTClmDevFact', 'FreqRbftClmDevFact']]
+file_name = dir + 'BaselineDevSns.parquet'
+TbDsvSns = pd.read_parquet(file_name)
+TbDsvSns = TbDsvSns[['ProductCod', 'BusinessTypeCod', 'Lags', 'FreqPPClmDevFact', 'FreqPTClmDevFact', 'FreqRbftClmDevFact']]
 
 # Baseline Salvage & Subrogation
-file_name = dir + 'BaselineSS.xlsx'
-TbBslSS = pd.read_excel(file_name)
+file_name = dir + 'BaselineSS.parquet'
+TbBslSS = pd.read_parquet(file_name)
 
-file_name = dir + 'BaselineDsvSS.xlsx'
-TbDsvSS = pd.read_excel(file_name)
+file_name = dir + 'BaselineDsvSS.parquet'
+TbDsvSS = pd.read_parquet(file_name)
 
 # Criar Db Elasticidade
-dir = 'Z:/Economics_Brazil/09.Simulador/20.Template/01.Inputs/04.ElasticityFigures/'
+dir = '_data/_01Input/_04ElasticityFigures/'
 file_name = 'Db_ElastRisk.xlsx'
 Db_ElastRisk = pd.read_excel(dir + file_name)
 
 # Inflation Figures
-dir = 'Z:/Economics_Brazil/09.Simulador/20.Template/01.Inputs/05.Macro/'
+dir = '_data/_03Baselines/_05Macro/'
 file_name = dir + 'TbInflation.xlsx'
 TbInfl = pd.read_excel(file_name)
 
@@ -86,7 +79,7 @@ TbInfl = pd.read_excel(file_name)
 #2.0 Parameters--------------------------------------------------------------------
 
 pd.options.display.float_format = '{:.0f}'.format
-DataRef = pd.to_datetime('2026-01-01')
+DataRef = pd.to_datetime('2025-12-01')
 attributes = ['CodTipNeg', 'CodProd'
 #              , 'CodEmp', 'CodCnl'
 #              , 'CodReg', 'CodCol1', 'CodCol2'
@@ -556,8 +549,7 @@ df_ActProj = pd.concat([df_actuals, df_ProjCen], ignore_index=True)
 
 #7.0 Export Dataframe Cenario Selecionado (parquet)--------------------------------------------------------------------
 # Alterar diretorio para AWS S3
-diroutput = 'Z:/Economics_Brazil/09.Simulador/20.Template/04.Outputs/'
-
+diroutput = '_data/_04Outputs/'
 
 version = '_v1'
 date = pd.to_datetime('2026-04-01')
@@ -587,7 +579,7 @@ df_ActProj = (
 )
 
 # Alterar diretorio para AWS S3
-diroutput = 'Z:/Economics_Brazil/09.Simulador/20.Template/04.Outputs/Excel/'
+diroutput = '_data/_04Outputs/Excel/'
 
 outputfile = 'Db_Cens_202604v0.csv'
 df_ActProj.reset_index(drop=True, inplace=True)
