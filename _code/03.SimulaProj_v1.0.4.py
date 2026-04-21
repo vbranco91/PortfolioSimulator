@@ -26,11 +26,11 @@ import pyarrow.parquet as pq
 
 #1.0 Import Dataframe (Parquet)--------------------------------------------------------------------
 # Alterar diretorio para AWS S3
-dir = 'C:/Users/vinic/OneDrive/Desktop/Vini/02.Projetos/ExposicaoAtuarial/2025/Simulador/01.Inputs/01.Prem/'
+dir = '_data/_01Input/_01Prem/'
 file_name = dir + 'Db_PremAct.parquet'
 df = pd.read_parquet(file_name)
 
-dir = 'C:/Users/vinic/OneDrive/Desktop/Vini/02.Projetos/ExposicaoAtuarial/2025/Simulador/20.Template/03.Baselines/01.Prem/'
+dir = '_data/_03Baselines/_01Prem/'
 file_name = dir + 'BaselinePremium.parquet'
 TbBslPrm = pd.read_parquet(file_name)
 file_name = dir + 'PremiumDevelopment.parquet'
@@ -41,11 +41,11 @@ file_name = dir + 'RenewalRatio.parquet'
 TbBslRetRatio = pd.read_parquet(file_name)
 
 # Criar Db Elasticidade em .parquet
-dir = 'C:/Users/vinic/OneDrive/Desktop/Vini/02.Projetos/ExposicaoAtuarial/2025/Simulador/01.Inputs/04.ElasticityFigures/'
+dir = '_data/_01Input/_04ElasticityFigures/'
 file_name = 'Db_Elast.parquet'
 Db_Elast = pd.read_parquet(dir + file_name)
 
-dir = 'C:/Users/vinic/OneDrive/Desktop/Vini/02.Projetos/ExposicaoAtuarial/2025/Simulador/01.Inputs/03.CotacaoVlrIS/'
+dir = '_data/_01Input/_03CotacaoVlrIS/'
 file_name = dir + 'Db_QuotesSI.parquet'
 df_ctc = pd.read_parquet(file_name)
 
@@ -448,13 +448,13 @@ pd.options.display.float_format = '{:.0f}'.format
 # Create an ParquetWriter object #
 ##################################
 # Alterar diretorio para AWS S3
-diroutput = 'C:/Users/vinic/OneDrive/Desktop/Vini/02.Projetos/ExposicaoAtuarial/2025/Simulador/20.Template/01.Inputs/06.ProjCenOutputs/'
+diroutput = '_data/_01Input/_06ProjCenOutputs/'
 outputfile = 'Db_PremProjCen.parquet'
 df_ProjCen.reset_index(drop=True, inplace=True)
 df_ProjCen.to_parquet(diroutput + outputfile)
 
 
-diroutput = 'C:/Users/vinic/OneDrive/Desktop/Vini/02.Projetos/ExposicaoAtuarial/2025/Simulador/20.Template/01.Inputs/06.ProjCenOutputs/Excel/'
+diroutput = '_data/_01Input/_06ProjCenOutputs/Excel/'
 outputfile = 'Db_PremProjCen.xlsx'
 df_ProjCen.reset_index(drop=True, inplace=True)
 df_ProjCen.to_excel(diroutput + outputfile, index=False)
